@@ -4,18 +4,19 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 
+app.use(express.static('public'))
+
 app.use( '/reservation', (req, res) => {
-  res.send(reservation.html)
+  res.sendFile(path.join(__dirname, "public/reserve.html"))
 });
 
-app.use( '/view', (req, res) => {
-  res.send(view.html)
+app.use( '/tables', (req, res) => {
+  res.sendFile(path.join(__dirname, "public/tables.html"))
 });
 
 app.use( '/', (req, res) => {
-    res.send(index.html)
+  res.sendFile(path.join(__dirname, "public/home.html"))
 });
-
 
 
 app.listen( port, () => {
