@@ -1,1 +1,1 @@
-# restaurantApp-heroku
+# Restaurant-Heroku
